@@ -1,6 +1,6 @@
 {
   "name": "@xcrap/got-scraping-client",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Xcrap Got Scraping Client is a package of the Xcrap framework that implements an HTTP client using the Got Scraping library.",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
