@@ -33,8 +33,8 @@
     "load-esm": "^1.0.2"
   },
   "peerDependencies": {
-    "@xcrap/core": "^0.0.3",
-    "@xcrap/parser": "^0.0.2"
+    "@xcrap/core": "*",
+    "@xcrap/parser": "*"
   },
   "repository": {
     "type": "git",
