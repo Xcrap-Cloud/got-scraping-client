@@ -1,11 +1,17 @@
 {
   "name": "@xcrap/got-scraping-client",
   "version": "0.0.3",
-  "description": "**Xcrap Got Scraping Client** is a package of the Xcrap framework that implements an HTTP client using the [Got Scraping](https://www.npmjs.com/package/got-scraping) library.",
-  "main": "index.js",
+  "description": "Xcrap Got Scraping Client is a package of the Xcrap framework that implements an HTTP client using the Got Scraping library.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/*",
+    "!/**/__tests__"
+  ],
   "scripts": {
     "test": "jest",
-    "build": "rollup -c"
+    "build": "tsc"
   },
   "keywords": [
     "web scraping",
@@ -13,18 +19,13 @@
     "http client",
     "got scraping"
   ],
-  "author": "Marcuthj",
+  "author": "Marcuth",
   "license": "MIT",
   "type": "commonjs",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^28.0.3",
-    "@rollup/plugin-node-resolve": "^16.0.1",
-    "@rollup/plugin-typescript": "^12.1.2",
     "@types/node": "^22.13.17",
     "header-generator": "^2.1.63",
-    "rollup": "^4.39.0",
     "ts-node": "^10.9.2",
-    "tslib": "^2.8.1",
     "typescript": "^5.8.2"
   },
   "dependencies": {
