@@ -7,10 +7,10 @@
 There are no secrets to installing it, just use your favorite dependency manager. Here is an example using NPM:
 
 ```cmd
-npm i @xcrap/got-scraping-client @xcrap/core @xcrap/parser
+npm i @xcrap/got-scraping-client @xcrap/core @xcrap/extractor
 ```
 
-> You need to install `@xcrap/parser` and `@xcrap/core` as well because I left them as `peerDependencies`, which means that the package needs `@xcrap/parser` and `@xcrap/core` as dependencies, however, the ones that the user has installed in the project will be used.
+> You need to install `@xcrap/extractor` and `@xcrap/core` as well because I left them as `peerDependencies`, which means that the package needs `@xcrap/extractor` and `@xcrap/core` as dependencies, however, the ones that the user has installed in the project will be used.
 
 ## 🚀 Usage
 
@@ -18,14 +18,14 @@ Like any HTTP client, `GotScrapingClient` has two methods: `fetch()` to make a r
 
 ```ts
 import { GotScrapingClient } from "@xcrap/got-scraping-client"
-import { extract } from "@xcrap/parser"
+import { extract, css } from "@xcrap/extractor"
 
 ;(async() => {
     const client = new GotScrapingClient()
     const url = "https://example.com"
     const response = await client.fetch({ url: url })
     const parser = response.asHtmlParser()
-    const pageTitle = await parser.parseFirst({ query: "title", extractor: extract("innerText") })
+    const pageTitle = await parser.extractValue({ query: css("title"), extractor: extract("innerText") })
 
     console.log("Page Title:", pageTitle)
 })();
