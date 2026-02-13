@@ -25,7 +25,7 @@ import { extract } from "@xcrap/parser"
     const url = "https://example.com"
     const response = await client.fetch({ url: url })
     const parser = response.asHtmlParser()
-    const pageTitle = await parser.parseFist({ query: "title", extractor: extract("innerText") })
+    const pageTitle = await parser.parseFirst({ query: "title", extractor: extract("innerText") })
 
     console.log("Page Title:", pageTitle)
 })();
