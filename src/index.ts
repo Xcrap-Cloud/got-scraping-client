@@ -8,13 +8,15 @@ export type GotScrapingRequestOptions = ClientRequestOptions & ExtendedExtendOpt
 
 export type GotScrapingFetchManyOptions = ClientFetchManyOptions<GotScrapingRequestOptions>
 
-export type GotScrapingClientOptions = BaseClientOptions<GotScrapingProxy> & ExtendedExtendOptions
+export interface GotScrapingClientOptions extends BaseClientOptions<GotScrapingProxy>, Omit<ExtendedExtendOptions, "proxyUrl"> {}
 
 export class GotScrapingClient extends BaseClient<GotScrapingProxy> implements ClientInterface {
     protected gotScrapingInstance: GotScraping | undefined
+    protected readonly options: GotScrapingClientOptions
 
-    constructor(readonly options: GotScrapingClientOptions = {}) {
+    constructor(options: GotScrapingClientOptions = {}) {
         super(options)
+        this.options = options
     }
 
     protected async initGotScraping() {
